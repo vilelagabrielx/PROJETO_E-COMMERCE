@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 projeto-ecommerce--/
-apps/produto/migrations/0001_initial.py
+apps/produto/migrations
+ apps/produto/migrations

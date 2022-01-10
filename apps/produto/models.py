@@ -39,3 +39,16 @@ class T_produto(models.Model):
 
     def __str__(self):
         return self.nome
+
+class T_variacao(models.Model):
+    produto = models.ForeignKey(T_produto, on_delete=models.CASCADE)
+    nome = models.CharField(max_length=50)
+    preco = models.FloatField()
+    preco_promocional = models.FloatField(default=0)
+    estoque = models.PositiveIntegerField(default=1)
+    
+    def __str__(self):
+        return self.nome or self.produto.nome
+    class Meta:
+        verbose_name = 'Variação'
+        verbose_name_plural = 'Variações'

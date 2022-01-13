@@ -32,7 +32,6 @@ INSTALLED_APPS = [
     "apps.pedido",
     "apps.perfil",
     "apps.produto",
-    "apps.pedido",
     # TODO: debug toolbar é usada apenas no desenvolvimento
     "debug_toolbar",
 ]

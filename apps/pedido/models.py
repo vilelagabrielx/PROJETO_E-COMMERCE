@@ -1,6 +1,6 @@
 # pylint: disable=missing-module-docstring
 from django.db import models
-from django.contrib.auth.models import user
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Pedido(models.Model):
@@ -24,7 +24,7 @@ class itemPedido(models.Model):
     pedido = models.ForeignKey(Pedido, on_delete = models.CASCADE)
     produto = models.CharField(max_length=255)
     produto_id = models.PositiveIntegerField()
-    variacao = models.Charfield(max_length=255)
+    variacao = models.CharField(max_length=255)
     variacao_id = models.PositiveIntegerField()
     preco = models.FloatField()
     preco_promorcional = models.FloatField(default=0)

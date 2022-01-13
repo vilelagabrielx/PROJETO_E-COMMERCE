@@ -130,4 +130,5 @@ dmypy.json
 
 projeto-ecommerce--/
 apps/produto/migrations
- apps/produto/migrations
+apps/produto/migrations
+apps/pedido/migrations

@@ -132,3 +132,6 @@ projeto-ecommerce--/
 apps/produto/migrations
 apps/produto/migrations
 apps/pedido/migrations
+apps/perfil/migrations/0001_initial.py
+media/produto_imagens/202201/ArquivoExibir_T2o4WmX.jpeg
+media/produto_imagens/202201/D_NQ_NP_2X_859594-MLB48791554015_012022-F.webp

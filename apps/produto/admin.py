@@ -1,16 +1,16 @@
 from django.contrib import admin
-from .models import T_produto,T_variacao
+from .models import Produto,Variacao
 from . import models
 
 
 
 class VariacaoiIline(admin.TabularInline):
-    model = models.T_variacao
+    model = models.Variacao
     extra = 1
 class ProdutoAdmin(admin.ModelAdmin):
     inlines = [
      VariacaoiIline
     ]
-admin.site.register(T_produto,ProdutoAdmin)
+admin.site.register(Produto,ProdutoAdmin)
 
-admin.site.register(T_variacao)
+admin.site.register(Variacao)

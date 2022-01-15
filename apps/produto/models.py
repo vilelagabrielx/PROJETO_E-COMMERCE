@@ -24,8 +24,9 @@ class Produto(models.Model):  # classe do produto em si
         upload_to="produto_imagens/%Y%m/", blank=True, null=True)
     # TODO: "Descobrir pra que serve isso"
     slug = models.SlugField(unique=True, blank=True, null=True)
-    preco_marketing = models.FloatField()
-    preco_marketing_promocional = models.FloatField(default=0)
+    preco_marketing = models.FloatField(verbose_name='preço')
+    preco_marketing_promocional = models.FloatField(
+        default=0, verbose_name='preço promo')
     tipo = models.CharField(  # Campo apresentado como uma escolha entre simples e variação
         default="V", max_length=1, choices=(("v", "Variável"), ("s", "Simples"))
     )
@@ -65,6 +66,16 @@ class Produto(models.Model):  # classe do produto em si
 
     def __str__(self):  # metodo para retorno do campo no admin do django
         return self.nome
+
+    def get_preco_formatado(self):
+        return f'R${self.preco_marketing:.2f}'.replace('.', ',')
+
+    get_preco_formatado.short_description = 'Preço'
+
+    def get_preco_promo_formatado(self):
+        return f'R${self.preco_marketing_promocional:.2f}'.replace('.', ',')
+
+    get_preco_promo_formatado.short_description = 'Preço Promo'
 
 
 """"
